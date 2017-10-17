@@ -1,0 +1,254 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>10-10.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="" id="link">
+<style type="text/css">
+.box{/*--------------------------------------------css样式*/
+width: 100px;
+height: 100px;
+background: red;
+}
+.box1,.box2 {/*------------------------------------div样式*/
+	width: 100px;
+	height: 100px;
+}
+.box1 {
+	background: red;
+}
+.box2 {
+	background: green;
+}
+
+.yellow {/*----------------------------------------hao123换肤*/
+	background: yellow;
+}
+
+.green {
+	background: green;
+}
+
+/*.pink {
+	background: pink;
+}*/
+#boxq1 {
+	width: 100px;
+	height: 200px;
+	background: red;
+	display: none;
+}
+#boxq2 {
+	width: 100px;
+	height:200px;
+	background:red;
+	display:none;
+}
+#boxq3 {
+	width: 100px;
+	height: 200px;
+	background: red;
+	display: none;
+}
+.div_1 {
+	width: 100px;
+	height: 100px;
+	background: #666;
+	float: left;
+	margin-right:10px;
+	color: #fff;
+	font-size: 40px;
+}
+#box_2 {
+	width: 100px;
+	height: 200px;
+	background:red;
+}
+
+#box_11 {
+	width: 100px;
+	height: 200px;
+	background: red;
+	display: none;
+}
+
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	var oBtn3 = document.getElementById('btn3');
+	/*var oBody = document.getElementById('body');*/
+	var oBody=document.body;
+	var oLink = document.getElementById('link');
+	
+    oBtn1.onclick = function(){
+		/*oBody.className = 'yellow';	*/
+		/*oBody.style.backgroundColor="red";*/
+		oLink.href="skin1.css";
+	}
+	
+	oBtn2.onclick = function(){
+		/*oBody.className = 'green';	*/
+		/*oBody.style.backgroundColor="green";*/
+		oLink.href="skin2.css";
+	}	
+	
+	oBtn3.onclick = function(){
+		/*oBody.className = 'pink';	*/
+		/*oBody.style.backgroundColor="yellow";*/
+		oLink.href="skin3.css";
+	}
+
+}
+
+window.onload = function(){/*--------------------------------必应登录*/
+	var oBtn = document.getElementById('btn');
+	var oDiv = document.getElementById('boxq1');
+	
+	oBtn.onclick = function(){
+		alert('1');	
+	}
+}
+window.onload = function(){/*--------------------------------必应登录2*/
+	var oBtnq2 = document.getElementById('btnq2');
+	var oDivq2 = document.getElementById('boxq2');
+	
+	oBtnq2.onclick = function(){
+		if(oDivq2.style.display == 'block'){
+			oDivq2.style.display = 'none';	
+		}else{
+			oDivq2.style.display = 'block';	
+		}
+	}
+}
+
+window.onload = function(){/*--------------------------------必应登录3*/
+	var oBtnq3 = document.getElementById('btnq3');
+	var oDivq3 = document.getElementById('boxq3');
+	
+	oBtnq3.onclick = function(){
+		alert(oDivq3.style.display);
+		if(oDivq3.style.display == 'none'){
+			oDivq3.style.display = 'block';	
+		}else{
+			oDivq3.style.display = 'none';	
+		}
+	}
+}
+window.onload = function(){/*--------------------------------点击改变颜色*/
+	var oBox = document.getElementById('box');
+	
+	oBox.onclick = function(){
+		oBox.style.background = 'green';	
+	}
+}
+window.onload = function(){/*--------------------------------点击一组改变颜色*/
+	var aDiv = document.getElementsByClassName('div_1');
+	
+	for(var i = 0; i < aDiv.length; i++){
+		alert(i);//0,1,2
+		aDiv[i].onclick = function(){
+			this.style.background = 'red';	
+		}
+	}
+}
+window.onload = function(){/*--------------------------------点击div的样式-放大或缩小*/
+	var oDiv = document.getElementById('box');
+	oDiv.onmouseover = function(){
+		toBig();
+	}
+	oDiv.onmouseout = function(){
+		toSmall();
+	}
+	function toBig(){
+		var oDiv = document.getElementById('box');
+		oDiv.style.width = '200px';
+		oDiv.style.height = '200px';
+		oDiv.style.background = 'green';
+	}
+	function toSmall(){
+		var oDiv = document.getElementById('box');
+		oDiv.style.width = '100px';
+		oDiv.style.height = '100px';
+		oDiv.style.background = 'red';
+	}
+}
+window.onload = function(){
+	var oBox = document.getElementById('box');
+	
+	oBox.onclick = function(){
+		this.style.background = 'green';
+		this.innerHTML = '不是一个div';
+		alert(this.innerHTML);	
+		
+	}
+}
+window.onload = function(){
+	var oDiv = document.getElementById('box_2');
+	
+	oDiv.onmouseover = function(){
+		oDiv.style.width = '200px';
+		oDiv.style.height = '200px';
+		oDiv.style.background = 'green';
+	}
+	
+	oDiv.onmouseout = function(){
+		oDiv.style.width = '100px';
+		oDiv.style.height = '100px';
+		oDiv.style.background = 'red';		
+	}	
+}
+
+</script>
+<script>/*--------------------------------i++*/
+var i = 0;
+//i++
+i = i + 1;
+ alert(i);
+</script>
+
+
+
+
+  </head>
+  
+  <body class="pink" id="body">
+  <input type="button" value="按钮" onmouseover="document.getElementById('box').style.display='block';" onmouseout="document.getElementById('box').style.display='none';">
+<br>
+    css样式<br>
+    <div class="box" id="box">我是一个div</div><br><!--css样式-->
+    div样式<br>
+    <div class="box1"></div><!--div样式-->
+    <div class="box2"></div>
+    hao123换肤<br>
+    <input type="button" value="皮肤1" id="btn1">
+    <input type="button" value="皮肤2" id="btn2">
+    <input type="button" value="皮肤3" id="btn3">
+    <div id="box"></div>
+    <input type="button" value="按钮" onclick="alert('习大大说')"><!--js的第一个小程序-->
+    <input type="button" value="百度登录" onclick="document.getElementById('box').style.display='none';">
+    <input type="button" value="必应登录" id="btn">
+    <div id="boxq1"></div>
+    <input type="button" value="必应登录2" id="btnq2">
+    <div id="boxq2"></div>
+    <input type="button" value="必应登录3" id="btnq3">
+    <div id="boxq3"></div><br>
+    <div class="div_1">1</div>
+    <div class="div_1">2</div>
+    <div class="div_1">3</div><br><br><br><br><br><br>
+    <input type="button" value="变高" onclick="document.getElementById('box_2').style.height='250px';">
+    <input type="button" value="变宽" onclick="document.getElementById('box_2').style.width='250px';"/>
+    <div id="box_2"></div><br>
+    <p onclick="alert('1')">我是P标签</p><br>
+    
+    
+    
+    
+    
+    </body>
+</html>
